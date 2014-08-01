@@ -4,9 +4,33 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<title>Superfi.co - Coming soon</title>
-</head>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="main.css"></head>
 <body>
-  <h1>Superfico</h1>
-  <h2>Coming soon</h2>
+  <img id="logo" src="images/superfico_logo_1.png" width="500" height="100" />
+  <h1 id="claim">Art for a beautiful home.</h1>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+(function() {
+    var rotator = $('#logo');  // change to match image ID
+    var imageDir = 'images/';                          // change to match images folder
+    var delayInSeconds = 0.5;                            // set number of seconds delay
+    // list image names
+    var images = ['superfico_logo_1.png', 'superfico_logo_2.png', 'superfico_logo_3.png', 'superfico_logo_4.png',
+                  'superfico_logo_5.png', 'superfico_logo_6.png'];
+
+    // don't change below this line
+    var num = 0;
+    var changeImage = function() {
+        var len = images.length;
+        rotator.attr('src', imageDir + images[num++]);
+        if (num == len) {
+            num = 0;
+        }
+    };
+    setInterval(changeImage, delayInSeconds * 1000);
+})();
+</script>
 </body>
 </html>
